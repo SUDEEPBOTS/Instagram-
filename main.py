@@ -6,10 +6,21 @@ from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 import instaloader
 import tempfile
+from flask import Flask, request
+from telegram import Update
+from telegram.ext import ApplicationBuilder, ContextTypes
 
-
-# Flask app setup
 app = Flask(__name__)
+
+# Init bot
+application = ApplicationBuilder().token(BOT_TOKEN).build()
+
+@app.post('/webhook')
+async def webhook():
+    data = request.get_json(force=True)
+    update = Update.de_json(data, application.bot)
+    await application.process_update(update)
+    return "OK"
 
 # Logging
 logging.basicConfig(level=logging.INFO)
