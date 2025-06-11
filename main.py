@@ -29,9 +29,9 @@ bot = Client(
 
 # Reel URLs list (or update from scraper later)
 REELS = [
-    "https://www.instagram.com/reel/C9fG5vXMpAB/",
-    "https://www.instagram.com/reel/C3H8x5YN8Y2/",
-    "https://www.instagram.com/reel/C0l7G7xsiZr/"
+    "https://www.instagram.com/reel/DJYhS7DTC7S/",
+    "https://www.instagram.com/reel/DKBWBXHxh-h/",
+    "https://www.instagram.com/reel/DI6foZCSlsg/"
 ]
 
 
